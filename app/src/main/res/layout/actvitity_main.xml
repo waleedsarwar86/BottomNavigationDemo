@@ -16,10 +16,8 @@
         android:id="@+id/tab_layout"
         style="@style/AppTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:background="?attr/colorPrimary"
-        app:d
-        app:tabPaddingBottom="10dp"
-        app:tabPaddingTop="8dp" />
+ />
 
 </LinearLayout>

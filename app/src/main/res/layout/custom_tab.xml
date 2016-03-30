@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-
+    android:background="?attr/selectableItemBackground"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="8dp">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:background="@color/colorPrimary"
         android:scaleType="centerInside"
         android:src="@drawable/ic_recents_selector" />
 
@@ -21,7 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:maxLines="2"
+        android:maxLines="1"
         android:textAllCaps="false"
+        android:textColor="@color/tab_color"
+        android:textSize="12sp"
         tools:text="Recents" />
 </LinearLayout>

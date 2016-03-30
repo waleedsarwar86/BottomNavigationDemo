@@ -36,38 +36,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.actvitity_main);
 
         // Setup the viewPager
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(viewPager);
 
-        mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                //updateTabsIcon(tab.getPosition());
-            }
+        for (int i = 0; i < mTabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = mTabLayout.getTabAt(i);
+            tab.setCustomView(pagerAdapter.getTabView(i));
+        }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
+        mTabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
 
-
-
-
-
     private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        public final int PAGE_COUNT = 3;
 
         private final String[] mTabsTitle = {"Recents", "Favorites", "Nearby"};
 
@@ -103,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return PAGE_COUNT;
         }
 
         @Override
