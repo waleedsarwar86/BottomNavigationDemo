@@ -1,6 +1,6 @@
 # BottomNavigationDemo
 
-This is a sample project which shows how to implement android new officaly added material Design Bottom navigation component.
+This is a sample project which shows how to implement android new officially added material Design Bottom navigation component.
 
 
 <p align="center">
