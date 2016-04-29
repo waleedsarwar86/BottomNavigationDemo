@@ -24,11 +24,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_favorite_selector,
             R.drawable.ic_place_selector};
 
-    private int[] mTabsSelectedIcons = {
-            R.drawable.ic_recents_selected_24dp,
-            R.drawable.ic_favorite_selected_24dp,
-            R.drawable.ic_place_selected_24dp};
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +33,21 @@ public class MainActivity extends AppCompatActivity {
         // Setup the viewPager
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(pagerAdapter);
+        if (viewPager != null)
+            viewPager.setAdapter(pagerAdapter);
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mTabLayout.setupWithViewPager(viewPager);
+        if (mTabLayout != null) {
+            mTabLayout.setupWithViewPager(viewPager);
 
-        for (int i = 0; i < mTabLayout.getTabCount(); i++) {
-            TabLayout.Tab tab = mTabLayout.getTabAt(i);
-            tab.setCustomView(pagerAdapter.getTabView(i));
+            for (int i = 0; i < mTabLayout.getTabCount(); i++) {
+                TabLayout.Tab tab = mTabLayout.getTabAt(i);
+                if (tab != null)
+                    tab.setCustomView(pagerAdapter.getTabView(i));
+            }
+
+            mTabLayout.getTabAt(0).getCustomView().setSelected(true);
         }
-
-        mTabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 
 
@@ -99,8 +98,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class TabViewHolder {
-        public ImageView mIcon;
-
-    }
 }

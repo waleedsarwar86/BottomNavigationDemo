@@ -13,8 +13,7 @@
         android:id="@+id/icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_recents_selector" />
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/title"
