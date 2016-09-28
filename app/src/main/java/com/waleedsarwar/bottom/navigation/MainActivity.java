@@ -31,10 +31,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.actvitity_main);
 
         // Setup the viewPager
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        CustomViewPager viewPager = (CustomViewPager) findViewById(R.id.view_pager);
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        if (viewPager != null)
+
+        if (viewPager != null) {
+            viewPager.setPagingEnabled(false);
             viewPager.setAdapter(pagerAdapter);
+        }
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         if (mTabLayout != null) {
