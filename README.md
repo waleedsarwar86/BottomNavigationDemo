@@ -6,3 +6,6 @@ This is a sample project which shows how to implement android new officially add
 <p align="center">
   <img src="https://github.com/waleedsarwar86/BottomNavigationDemo/blob/master/screenshots/screenshot.png" width="360" height="640"/>
 </p>
+
+# References
+https://medium.com/@nullthemall/bottom-navigation-behavior-388b9b206667
